@@ -14,6 +14,7 @@ Description:
 #include "input.h"
 #include <iostream> 
 #include "QuadraticExpression.h"
+#include <cctype>
 
 using namespace std;
 
@@ -82,25 +83,25 @@ void quadraticExpression()
 
         cout << "\t\n1 > Quadratic Menu\n";
         cout << "===========================================================\n";
-        cout << "1.display the expression\n";
-        cout << "2.set coefficient(a)\n";
-        cout << "3.set coefficient(b)\n";
-        cout << "4.set coefficient(c)\n";
-        cout << "5.get evaluation(x)\n";
-        cout << "6.get the number of real roots\n";
-        cout << "7.get real root(s)\n";
+        cout << "D.display the expression\n";
+        cout << "A.set coefficient(a)\n";
+        cout << "B.set coefficient(b)\n";
+        cout << "C.set coefficient(c)\n";
+        cout << "E.get evaluation(x)\n";
+        cout << "N.get the number of real roots\n";
+        cout << "R.get real root(s)\n";
         cout << "------------------------------------------------------------\n";
         cout << "0. return\n";
         cout << "===========================================================\n";
 
         // get user input/option of main menu
-        int option = inputInteger("\n\tOption: ", 0, 7);
+        int option = toupper(inputChar("\n\tOption: "));
 
 
         switch (option)
         {
-        case 0: system("cls"); mainMenu(); break;
-        case 1: // display the expression
+        case '0': system("cls"); mainMenu(); break;
+        case 'D': // display the expression
         {
             cout << endl;
 
@@ -109,7 +110,7 @@ void quadraticExpression()
 
         }break;
 
-        case 2: // set coefficient(a)
+        case 'A': // set coefficient(a)
         {
 
             int variableA = inputInteger("\nEnter coeficient(a): ");
@@ -119,7 +120,7 @@ void quadraticExpression()
             getline(cin, input);
 
         }system("cls"); break;
-        case 3: // set coefficient(b)
+        case 'B': // set coefficient(b)
         {
 
             int variableB = inputInteger("\nEnter coeficient(b): ");
@@ -129,7 +130,7 @@ void quadraticExpression()
             getline(cin, input);
 
         }system("cls"); break;
-        case 4: // set coefficient(c)
+        case 'C': // set coefficient(c)
         {
 
             int variableC = inputInteger("\nEnter coeficient(c): ");
@@ -139,7 +140,7 @@ void quadraticExpression()
             getline(cin, input);
 
         }system("cls"); break;
-        case 5: // set coefficient(x)
+        case 'E': // set coefficient(x)
         {
 
             int variableX = inputInteger("\nEnter coeficient(x): ");
@@ -151,22 +152,23 @@ void quadraticExpression()
             object1.getEvaluation();
 
         } break;
-        case 6:
+        case 'N':
         {
             object1.numRoots();
 
         }
         break;
-        case 7:
+        case 'R':
         {
             object1.getRoots();
 
         }
         break;
-
-
+        default:
+            cout << "\n\tERROR-1A: Invalid input. Must be '0','A','B','C','D','N', or 'R'\n";
 
         }
+       
 
         // new line
         cout << "\n";
