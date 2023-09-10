@@ -49,10 +49,14 @@ void QuadraticExpression::setX(int newX)
 {
 	x = newX;
 }
+//Precondition: NA
+//Postcondition: prints out quadratic equation
 void QuadraticExpression::displayEquation() const 
 {
 	cout << "\t" << a << "x^2 + " << b << "x + " << c << endl;
 }
+//Precondition: NA
+//Postcondition: prints out result of solved quadratic eqaution with the given x
 void QuadraticExpression::getEvaluation() const
 {
 	double result = 0;
@@ -61,6 +65,8 @@ void QuadraticExpression::getEvaluation() const
 
 	cout << "\tEvaluation result: " << result;
 }
+//Precondition: NA
+//Postcondition: prints out number of roots Quadratic equation has
 void QuadraticExpression::numRoots() const
 {
 	double discriminant = 0;
@@ -80,6 +86,8 @@ void QuadraticExpression::numRoots() const
 		cout << "\n\tnumber of real roots: 2\n";
 	}
 }
+//Precondition: NA
+//Postcondition: calculates the roots of quadratic equation and prints
 void QuadraticExpression::getRoots() const 
 {
 	double discriminant = 0;

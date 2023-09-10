@@ -27,9 +27,17 @@ public:
 	void setC(int newC);
 	void setX(int newX);
 
+//Precondition: NA
+//Postcondition: prints out quadratic equation
 	void displayEquation() const;
+//Precondition: NA
+//Postcondition: prints out result of solved quadratic eqaution with the given x
 	void getEvaluation() const;
+//Precondition: NA
+//Postcondition: prints out number of roots Quadratic equation has
 	void numRoots() const;
+//Precondition: NA
+//Postcondition: calculates the roots of quadratic equation and prints
 	void getRoots() const;
 
 };
